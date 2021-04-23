@@ -1,6 +1,7 @@
 // Frank Poth 03/09/2018
 
 /* The keyDownUp handler was moved to the main file. */
+// takes keyboard input
 
 const Controller = function() {
 
@@ -11,10 +12,11 @@ const Controller = function() {
   this.keyDownUp = function(type, key_code) {
 
     var down = (type == "keydown") ? true : false;
-
+    
+// 37, 38, 39 are arrow keys
     switch(key_code) {
 
-      case 37: this.left.getInput(down);  break;
+      case 37: this.left.getInput(down);  break; 
       case 38: this.up.getInput(down);    break;
       case 39: this.right.getInput(down);
 
@@ -32,7 +34,7 @@ Controller.prototype = {
 
 Controller.ButtonInput = function() {
 
-  this.active = this.down = false;
+  this.active = this.down = false; // here .down means button is held 
 
 };
 

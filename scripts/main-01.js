@@ -50,11 +50,13 @@ window.addEventListener("load", function(event) {
 
   };
 
+   // called on every frame, managed by engine, calls player movement
   var update = function() {
 
     if (controller.left.active)  { game.world.player.moveLeft();  }
     if (controller.right.active) { game.world.player.moveRight(); }
-    if (controller.up.active)    { game.world.player.jump(); controller.up.active = false; }
+    // doesnt keep jumping if button held due to : controller.up.active = false;
+    if (controller.up.active)    { game.world.player.jump(); controller.up.active = false; } 
 
     game.update();
 
